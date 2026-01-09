@@ -12,7 +12,7 @@ const Home = () => {
             <section className="hero">
                 <div className="hero-content container">
                     <h1 className="fade-in">Real Ighos <span className="text-highlight">Resources Limited</span></h1>
-                    <p className="fade-in delay-1">Real Ighos Limited - Your trusted partner in premier construction and real estate development.</p>
+                    <p className="fade-in delay-1">Real Ighos</p>
                     <div className="hero-actions fade-in delay-2">
                         <Link to="/projects" className="btn btn-primary">
                             View Our Work <ArrowRight size={18} style={{ marginLeft: '0.5rem' }} />
