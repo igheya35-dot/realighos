@@ -21,9 +21,6 @@ const About = () => {
                         <p>
                             We are a reputable construction management company specializing in residential building construction, interior finishes, renovations, and general construction services. With a commitment to delivering high-quality projects that exceed client expectations, our team of experienced professionals ensures timely, cost-effective, and sustainable project delivery.
                         </p>
-                        <p>
-                            **Objective:** We are known for "DETAILING". Our objective is to provide our clients with an "I am assured" experience, prioritizing their objectives through clear communication and follow-through.
-                        </p>
 
                         <div className="vision-mission-grid">
                             <div className="vm-card">
@@ -33,6 +30,10 @@ const About = () => {
                             <div className="vm-card">
                                 <h3>Our Mission</h3>
                                 <p>To procure projects at competitive pricing, provide sustainable and safe working environments, and deliver quality, well-detailed jobs within a reasonable time frame.</p>
+                            </div>
+                            <div className="vm-card">
+                                <h3>Our Objective</h3>
+                                <p>We are known for "DETAILING". Our objective is to provide our clients with an "I am assured" experience, prioritizing their objectives through clear communication and follow-through.</p>
                             </div>
                         </div>
 
