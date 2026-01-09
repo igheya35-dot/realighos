@@ -1,0 +1,108 @@
+.page-header {
+    background-color: var(--bg-card);
+    padding: 4rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: none;
+    border: 1px solid var(--text-muted);
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    color: var(--text-muted);
+    transition: all 0.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.projects-grid-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-item {
+    background-color: var(--bg-card);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.project-thumb {
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.project-item:hover .project-thumb img {
+    transform: scale(1.1);
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: rgba(var(--primary-h), 90%, 30%, 0.1);
+    color: var(--color-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+[data-theme='dark'] .badge {
+    background-color: rgba(var(--primary-h), 90%, 60%, 0.2);
+    color: var(--color-accent);
+}
+
+.project-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
