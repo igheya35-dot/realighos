@@ -92,11 +92,11 @@ const Contact = () => {
 
                         <div className="form-group">
                             <label>Name</label>
-                            <input type="text" name="from_name" placeholder="Your Name" required />
+                            <input type="text" name="name" placeholder="Your Name" required />
                         </div>
                         <div className="form-group">
                             <label>Email</label>
-                            <input type="email" name="from_email" placeholder="Your Email" required />
+                            <input type="email" name="email" placeholder="Your Email" required />
                         </div>
                         <div className="form-group">
                             <label>Message</label>
