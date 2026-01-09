@@ -26,7 +26,7 @@ const Contact = () => {
                             <MapPin className="text-primary" />
                             <div>
                                 <h4>Visit Us</h4>
-                                <p>123 Real Estate Ave, Lagos, Nigeria</p>
+                                <p>Pavillion Court, Happy home estate, Sangotedo, Lagos</p>
                             </div>
                         </div>
 
@@ -34,7 +34,8 @@ const Contact = () => {
                             <Phone className="text-primary" />
                             <div>
                                 <h4>Call Us</h4>
-                                <p>+234 800 123 4567</p>
+                                <p>+2348037965323</p>
+                                <p>+2348087965865</p>
                             </div>
                         </div>
 
@@ -42,7 +43,7 @@ const Contact = () => {
                             <Mail className="text-primary" />
                             <div>
                                 <h4>Email Us</h4>
-                                <p>info@realighos.com</p>
+                                <p>Realighos38@gmail.com</p>
                             </div>
                         </div>
                     </div>
