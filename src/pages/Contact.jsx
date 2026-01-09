@@ -1,10 +1,40 @@
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { Mail, Phone, MapPin, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
-    const handleSubmit = (e) => {
+    const formRef = useRef();
+    const [isLoading, setIsLoading] = useState(false);
+    const [status, setStatus] = useState({ type: '', message: '' });
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert("Thank you for your message! We will get back to you shortly.");
+        setIsLoading(true);
+        setStatus({ type: '', message: '' });
+
+        try {
+            await emailjs.sendForm(
+                'service_ebwdpml',
+                'template_3hbr98q',
+                formRef.current,
+                'HQmAIiEPWAQxZ9F3R'
+            );
+
+            setStatus({
+                type: 'success',
+                message: 'Thank you! Your message has been sent successfully. We will get back to you shortly.'
+            });
+            formRef.current.reset();
+        } catch (error) {
+            console.error('EmailJS Error:', error);
+            setStatus({
+                type: 'error',
+                message: 'Oops! Something went wrong. Please try again or contact us directly via phone.'
+            });
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
@@ -48,21 +78,40 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    <form className="contact-form" onSubmit={handleSubmit}>
+                    <form ref={formRef} className="contact-form" onSubmit={handleSubmit}>
+                        {status.message && (
+                            <div className={`form-status ${status.type}`}>
+                                {status.type === 'success' ? (
+                                    <CheckCircle size={20} />
+                                ) : (
+                                    <AlertCircle size={20} />
+                                )}
+                                <span>{status.message}</span>
+                            </div>
+                        )}
+
                         <div className="form-group">
                             <label>Name</label>
-                            <input type="text" placeholder="Your Name" required />
+                            <input type="text" name="from_name" placeholder="Your Name" required />
                         </div>
                         <div className="form-group">
                             <label>Email</label>
-                            <input type="email" placeholder="Your Email" required />
+                            <input type="email" name="from_email" placeholder="Your Email" required />
                         </div>
                         <div className="form-group">
                             <label>Message</label>
-                            <textarea placeholder="Tell us about your project" rows="5" required></textarea>
+                            <textarea name="message" placeholder="Tell us about your project" rows="5" required></textarea>
                         </div>
-                        <button type="submit" className="btn btn-primary">
-                            Send Message <Send size={18} style={{ marginLeft: '0.5rem' }} />
+                        <button type="submit" className="btn btn-primary" disabled={isLoading}>
+                            {isLoading ? (
+                                <>
+                                    Sending... <Loader2 size={18} className="spin" style={{ marginLeft: '0.5rem' }} />
+                                </>
+                            ) : (
+                                <>
+                                    Send Message <Send size={18} style={{ marginLeft: '0.5rem' }} />
+                                </>
+                            )}
                         </button>
                     </form>
                 </div>
